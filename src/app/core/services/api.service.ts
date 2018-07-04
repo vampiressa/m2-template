@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {Headers, Http, RequestOptions} from '@angular/http';
+import {Headers, Http, RequestOptions} from '@angular/common/http';
 import {UIRouter} from '@uirouter/angular';
 import {UrlsConstant} from '@core/constants/urls.constant';
 import {Observable} from 'rxjs/Observable';

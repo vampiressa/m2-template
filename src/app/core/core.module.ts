@@ -1,5 +1,5 @@
 import {NgModule} from '@angular/core';
-import {HttpModule} from '@angular/http';
+import {HttpClientModule} from '@angular/common/http';
 import {ApiService} from '@core/services/api.service';
 import {OauthService} from '@core/services/oauth.service';
 import {AngularSharedModule} from '@core/shared/angular.shared.module';
@@ -11,7 +11,7 @@ import {PhonePipe} from '@core/pipes/phone.pipe';
     PhonePipe
   ],
   imports: [
-    HttpModule,
+    HttpClientModule,
     AngularSharedModule,
     LibsSharedModule
   ],
