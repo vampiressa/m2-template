@@ -1,1 +1,102 @@
 /* You can add global styles to this file, and also import other style files */
+@import "./assets/fonts/play/stylesheet.css";
+
+*{
+  font-family: Play, 'Play', 'sans-serif';
+  font-weight: normal;
+  font-style: normal;
+}
+
+*:focus{
+  outline: none;
+}
+
+html, body, app-root{
+  min-height: 100% !important;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+}
+
+.hidden{
+  display: none !important;
+}
+
+p, span, li{
+  margin: 0;
+}
+
+ul, li{
+  margin: 0;
+  padding: 0;
+}
+
+a, a:hover{
+  text-decoration: none;
+  //color: #252728;
+}
+
+h1, h2, h3, h4, h5, h6, p, span, li{
+  cursor: default;
+}
+
+button{
+  padding: 1px 0;
+  border: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  //&:hover{
+  //  background: #ff9f87 !important;
+  //}
+}
+
+input{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0 !important;
+  border: none;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus{
+  //border: 1px solid green;
+  //-webkit-text-fill-color: green;
+  -webkit-box-shadow: 0 0 0 1000px #ffffff inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+input[type=checbox]{
+  cursor: pointer;
+  margin: 0;
+}
+
+.bold{
+  font-weight: 700;
+}
+
+.demiBold{
+  font-weight: 600;
+}
+
+.light{
+  font-weight: 300;
+}
+
+.regular{
+  font-weight: normal;
+}
+
+.pointer{
+  cursor: pointer;
+}

@@ -1,0 +1,32 @@
+<svg id="Search_field" data-name="Search field" xmlns="http://www.w3.org/2000/svg" width="62.97" height="33.969" viewBox="0 0 62.97 33.969">
+  <metadata><?xpacket begin="﻿" id="W5M0MpCehiHzreSzNTczkc9d"?>
+    <x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.6-c142 79.160924, 2017/07/13-01:06:39        ">
+      <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+        <rdf:Description rdf:about=""/>
+      </rdf:RDF>
+    </x:xmpmeta>
+
+
+    <?xpacket end="w"?>
+  </metadata>
+  <defs>
+    <style>
+      .cls-1 {
+      fill: #c3996b;
+      }
+
+      .cls-1, .cls-2 {
+      fill-rule: evenodd;
+      }
+
+      .cls-2 {
+      fill: #fff;
+      }
+    </style>
+  </defs>
+  <path id="button" class="cls-1" d="M1235.97,85.979h-49.99V52h49.99V85.979ZM1186,63" transform="translate(-1173 -52)"/>
+  <path id="triangle" class="cls-1" d="M1185.99,62.008L1173,70l12.99,8V62.008Z" transform="translate(-1173 -52)"/>
+  <path id="icon" class="cls-2"
+        d="M1213.77,74.8a7.162,7.162,0,1,1,2.01-2.027c1.41,1.394,2.81,2.792,4.21,4.18-0.7.7-1.36,1.358-2.05,2.043C1216.56,77.606,1215.16,76.2,1213.77,74.8Zm-3.96-2.3a3.645,3.645,0,0,0,3.67-3.652A3.665,3.665,0,1,0,1209.81,72.5Z"
+        transform="translate(-1173 -52)"/>
+</svg>

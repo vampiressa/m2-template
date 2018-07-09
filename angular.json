@@ -39,6 +39,15 @@
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
+              "hmr": {
+                "hmr": true,
+                "fileReplacements": [
+                  {
+                    "replace": "src/environments/environment.ts",
+                    "with": "src/environments/environment.hmr.ts"
+                  }
+                ]
+              },
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
@@ -59,6 +68,9 @@
           "configurations": {
             "production": {
               "browserTarget": "M2:build:production"
+            },
+            "hmr": {
+              "hmr": true
             }
           }
         },
@@ -127,10 +139,5 @@
       }
     }
   },
-  "defaultProject": "M2",
-  "schematics": {
-    "@schematics/angular:component": {
-      "styleext": "scss"
-    }
-  }
+  "defaultProject": "M2"
 }

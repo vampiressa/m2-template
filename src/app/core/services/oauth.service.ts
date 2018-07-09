@@ -4,6 +4,9 @@ import {UIRouter} from '@uirouter/angular';
 @Injectable()
 export class OauthService {
 
+
+  public user = true;
+
   // private _regex = window.location.href.match(PatternsConstant.token);
   // private _urlToken = this._regex ? this._regex[1] : null;
 
@@ -15,7 +18,7 @@ export class OauthService {
 
     // local dev
 
-    //localStorage.setItem('token', 'Gh6WR6TNSHTLq7HJcW9h4Ut27sPLH9tz');
+    // localStorage.setItem('token', 'Gh6WR6TNSHTLq7HJcW9h4Ut27sPLH9tz');
 
     // prod bitrix
 

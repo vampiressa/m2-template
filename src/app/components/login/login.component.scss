@@ -1,0 +1,114 @@
+section.body{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  .wrapper{
+    margin: 144px 0 0 0;
+    width: 1070px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    .left{
+      margin: 0 0 0 44px;
+      width: 360px;
+      height: 335px;
+      border: 1px solid #f0f1f2;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      p{
+        font-size: 32px;
+        color: #eaedee;
+        &:not(:first-child){
+          margin-left: 7px;
+        }
+      }
+    }
+    .right{
+      display: flex;
+      flex-direction: column;
+      width: 425px;
+      text-align: center;
+      padding: 5px 0 0 0;
+      p.login{
+        font-size: 60px;
+        color: #c3996b;
+      }
+      form{
+        display: flex;
+        flex-direction: column;
+        //justify-content: space-between;
+        //height: 198px;
+        margin: 42px 0 0 0;
+        .field{
+          margin: 0 0 35px 0;
+          input{
+            border: 1px solid #2e4a57;
+            text-align: center;
+            background-color: #f0f1f2;
+            width: 100%;
+            padding: 10.5px 0;
+            color: #221e1f;
+            font-size: 24px;
+          }
+          p.activeBorder{
+            border: 2px solid #4ab790;
+            width: 421px;
+            position: relative;
+            bottom: 5px;
+            margin: 0 0 0 1px;
+          }
+        }
+        input.field:after{
+          content: "";
+          display: inline-block;
+          width: 25px;
+          height: 25px;
+          background: url("../../../assets/img/activefieldindicator.svg");
+        }
+        .actions{
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          .checkbox{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            span{
+              font-size: 21px;
+              color: #2e4a57;
+              margin: 2px 0 0 20px;
+            }
+            input[type=checkbox]{
+              margin: 5px 0 0 0;
+              &:before{
+                content: "";
+                display: inline-block;
+                width: 25px;
+                height: 25px;
+                background: url("../../../assets/img/checkbox.svg");
+              }
+              &:checked:before{
+                background: green;
+              }
+            }
+          }
+          button{
+            background-color: #2e4a57;
+            color: #ffffff;
+            font-size: 21px;
+            height: 50px;
+            width: 184px;
+            img{
+              margin: -3px 29px 0 0;
+              vertical-align: middle;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+

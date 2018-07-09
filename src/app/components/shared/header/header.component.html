@@ -1,0 +1,11 @@
+<section class="header" [ngStyle]="{'justify-content': authService.user ? '' : 'center'}">
+  <div class="menuButton" *ngIf="authService.user">
+    <img src="../../../../assets/img/buttonmenu.svg" alt="" class="menu">
+    <span>menu</span>
+  </div>
+  <img src="../../../../assets/img/Logo.svg" alt="" class="logo" [ngStyle]="{'margin': authService.user ? '0 0 0 138px' : ''}">
+  <div class="search" *ngIf="authService.user">
+    <input type="text">
+    <img src="../../../../assets/img/Searchbutton.svg" alt="" class="searchButton">
+  </div>
+</section>

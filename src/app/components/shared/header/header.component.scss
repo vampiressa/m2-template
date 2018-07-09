@@ -1,0 +1,40 @@
+section.header{
+  background-color: #2e4a57;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 130px;
+  text-align: center;
+  .menuButton{
+    img.menu{
+      cursor: pointer;
+      vertical-align: middle;
+    }
+    span{
+      font-size: 22px;
+      color: #ffffff;
+      margin-left: 19px;
+      vertical-align: middle;
+    }
+  }
+  img.logo{
+
+  }
+  .search{
+    position: relative;
+    input{
+      height: 40px;
+      width: 182px;
+      font-size: 18px;
+      color: #b3cfd6;
+      padding: 0 56px 0 17px;
+    }
+    img.searchButton{
+      position: absolute;
+      right: 3px;
+      top: 3px;
+      cursor: pointer;
+    }
+  }
+}
