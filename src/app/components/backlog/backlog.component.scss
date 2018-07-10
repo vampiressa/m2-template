@@ -1,0 +1,116 @@
+section{
+  background-color: #abb7bc;
+  height: calc(100% - 134.98px);
+  .container{
+    margin: 0 auto;
+    max-width: calc(100% - 200px);
+    padding: 0;
+    .pathNav{
+      padding: 18px 0;
+      a{
+        color: #518bb9;
+        font-size: 18px;
+      }
+    }
+    .alerts{
+      padding: 30px 28px 30px 40px;
+      align-items: center;
+      background-color: #ffffff;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      .left{
+        span{
+          font-size: 24px;
+          color: #221e1f;
+          vertical-align: middle;
+          margin: 0 0 0 42px;
+          line-height: 11px;
+        }
+      }
+      .right{
+        span{
+          margin-right: 31px;
+          color: #c3996b;
+          font-size: 24px;
+          vertical-align: middle;
+          line-height: 11px;
+        }
+        img{
+          cursor: pointer;
+        }
+      }
+    }
+    .main{
+      padding: 27px 0 0 0;
+      .tr.white{
+        background-color: #f0f1f2;
+      }
+      .tr.grey{
+        background-color: #bbcad2;
+      }
+      .th{
+        background-color: #bbcad2;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 30px;
+        .calendar{
+          img{
+            margin-right: 30px;
+          }
+          button{
+            padding: 9px 55px 9px 26px;
+            background-color: #eaedee;
+            color: #2e4a57;
+            font-size: 21px;
+            border: 1px solid #2e4a57;
+          }
+        }
+        .checkbox{
+          margin: 0 0 0 40px;
+          input[type=checkbox]{
+            vertical-align: middle;
+            height: 25px;
+            margin-right: 16px;
+            &:before{
+              content: "";
+              display: inline-block;
+              width: 25px;
+              height: 25px;
+              background: url("../../../assets/img/checkbox.svg");
+            }
+            &:checked:before{
+              background: green;
+            }
+          }
+          span{
+            vertical-align: middle;
+            font-size: 21px;
+            color: #2e4a57;
+          }
+          &.custom{
+            margin: 0 0 0 63px;
+          }
+        }
+      }
+      .tr{
+        padding: 20px 47px 20px 31px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        p{
+          color: #4c504e;
+          font-size: 18px;
+          max-width: calc(100% / 3 - 100px);
+          width: 100%;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+}
