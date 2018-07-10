@@ -48,6 +48,7 @@ section.menu{
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.35);
   position: absolute;
   z-index: 100;
+  width: 100%;
   &.collapse.in.show{
     height: calc(100% - 134.98px) !important;
     display: flex !important;
