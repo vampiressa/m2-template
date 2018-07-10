@@ -1,6 +1,6 @@
 <section class="header" [ngStyle]="{'justify-content': authService.user ? '' : 'center'}">
   <div class="menuButton" *ngIf="authService.user">
-    <img src="../../../../assets/img/buttonmenu.svg" alt="" class="menu">
+    <img src="../../../../assets/img/buttonmenu.svg" alt="" class="menu" (click)="isCollapsed = !isCollapsed">
     <span>menu</span>
   </div>
   <img src="../../../../assets/img/Logo.svg" alt="" class="logo" [ngStyle]="{'margin': authService.user ? '0 0 0 138px' : ''}">
@@ -9,3 +9,38 @@
     <img src="../../../../assets/img/Searchbutton.svg" alt="" class="searchButton">
   </div>
 </section>
+
+<section class="menu" [collapse]="isCollapsed" #collapse="bs-collapse">
+  <div class="section" uiSrefActive="active" uiSref="alerts" (click)="isCollapsed = true">
+    <a><img src="../../../../assets/img/alert.svg">ALERTS</a>
+  </div>
+  <div class="section" (click)="isCollapsed = true">
+    <a><img src="../../../../assets/img/backlog.svg">BACKLOG</a>
+  </div>
+  <div class="nested">
+    <div class="heading">
+      <a>ANAGRAPHICS</a>
+    </div>
+    <div class="section" (click)="isCollapsed = true"><a><img src="../../../../assets/img/plant.svg">PLANTS</a></div>
+    <div class="section" (click)="isCollapsed = true"><a><img src="../../../../assets/img/area.svg">AREAS</a></div>
+    <div class="section" (click)="isCollapsed = true"><a><img src="../../../../assets/img/line.svg">LINES</a></div>
+    <div class="section" (click)="isCollapsed = true"><a><img src="../../../../assets/img/machines.svg">MACHINES</a></div>
+    <div class="section" (click)="isCollapsed = true"><a><img src="../../../../assets/img/part.svg">PARTS</a></div>
+  </div>
+  <div class="section" (click)="isCollapsed = true">
+    <a><img src="../../../../assets/img/analytics.svg">ANALYTICS</a>
+  </div>
+  <div class="section" (click)="isCollapsed = true">
+    <a><img src="../../../../assets/img/users.svg">USERS</a>
+  </div>
+  <div class="logOut">
+    <div class="left">
+      <p class="userName">Vincent Willem van Gogh</p>
+      <p class="last">Last sign in:<span class="date">02.09.1519</span><span class="time">15:40</span></p>
+    </div>
+    <div class="right">
+      <img src="../../../../assets/img/logout.svg">
+    </div>
+  </div>
+</section>
+

@@ -25,7 +25,7 @@ section.header{
     position: relative;
     input{
       height: 40px;
-      width: 182px;
+      width: 255px;
       font-size: 18px;
       color: #b3cfd6;
       padding: 0 56px 0 17px;
@@ -35,6 +35,103 @@ section.header{
       right: 3px;
       top: 3px;
       cursor: pointer;
+    }
+  }
+}
+
+section.menu{
+  padding: 24px 0 0 0;
+  background-color: #abb7bc;
+  max-width: 385px;
+  flex-direction: column;
+  align-items: flex-end;
+  &.collapse.in.show{
+    height: calc(100% - 134.98px) !important;
+    display: flex !important;
+  }
+  .section{
+    cursor: pointer;
+    width: 285px;
+    padding: 0 0 0 26px;
+    &:hover{
+      background-color: #c3996b;
+    }
+    a{
+      color: #221e1f;
+      font-size: 16px;
+      line-height: 48px;
+      img{
+        margin-right: 26px;
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
+  .nested{
+    margin: 13px 0 14px 0;
+    padding: 0 0 10px 0;
+    background-color: #b5c0c4;
+    width: 285px;
+    .heading{
+      padding: 0 0 0 30px;
+      cursor: default;
+      color: #ffffff;
+      font-size: 19px;
+      line-height: 63px;
+    }
+    .section{
+      padding: 0 0 0 31px;
+      a{
+        img{
+          margin-right: 22px;
+          width: 30px;
+          height: 30px;
+        }
+      }
+    }
+    div:nth-child(2){
+      img{
+        margin: 0 22px 15px 0;
+      }
+    }
+    div:nth-child(3){
+      img{
+        margin: 0 22px 6px 0;
+      }
+    }
+  }
+  div:nth-child(4){
+    img{
+      margin: 0 26px 8px 0;
+    }
+  }
+  .logOut{
+    background-color: #b5c0c4;
+    width: 285px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 12px 0 15px 0;
+    padding: 9px 36px 8px 30px;
+    .left{
+      .userName{
+        color: #2e4a57;
+        font-size: 12px;
+      }
+      .last{
+        font-size: 9px;
+        color: #95989c;
+        .date{
+          margin: 0 10px 0 5px;
+        }
+      }
+    }
+    .right{
+      img{
+        cursor: pointer;
+        width: 32px;
+        height: 32px;
+      }
     }
   }
 }

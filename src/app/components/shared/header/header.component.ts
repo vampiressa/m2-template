@@ -9,6 +9,8 @@ import {OauthService} from '@core/services/oauth.service';
 
 export class HeaderComponent implements OnInit {
 
+  public isCollapsed = true;
+
   constructor(public authService: OauthService) {
 
   }

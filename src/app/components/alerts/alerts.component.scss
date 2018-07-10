@@ -1,0 +1,119 @@
+section{
+  background-color: #abb7bc;
+  height: calc(100% - 134.98px);
+  .container{
+    margin: 0 auto;
+    max-width: calc(100% - 200px);
+    padding: 0;
+    .pathNav{
+      padding: 18px 0;
+      a{
+        color: #518bb9;
+        font-size: 18px;
+      }
+    }
+    .alerts{
+      padding: 32px 46px;
+      background-color: #ffffff;
+      span{
+        font-size: 24px;
+        color: #221e1f;
+        vertical-align: middle;
+        margin: 0 0 0 42px;
+        line-height: 11px;
+      }
+    }
+    .main{
+      padding: 27px 0 0 0;
+      .tr.white{
+        background-color: #f0f1f2;
+      }
+      .tr.grey{
+        background-color: #bbcad2;
+      }
+      .th{
+        background-color: #bbcad2;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 10px 30px;
+        .calendar{
+          margin-right: 40px;
+          img{
+            margin-right: 30px;
+          }
+          button{
+            padding: 9px 55px 9px 26px;
+            background-color: #eaedee;
+            color: #2e4a57;
+            font-size: 21px;
+            border: 1px solid #2e4a57;
+          }
+        }
+        .checkbox{
+          input[type=checkbox]{
+            vertical-align: middle;
+            height: 25px;
+            margin-right: 16px;
+            &:before{
+              content: "";
+              display: inline-block;
+              width: 25px;
+              height: 25px;
+              background: url("../../../assets/img/checkbox.svg");
+            }
+            &:checked:before{
+              background: green;
+            }
+          }
+          span{
+            vertical-align: middle;
+            font-size: 21px;
+            color: #2e4a57;
+          }
+        }
+      }
+      .tr{
+        padding: 20px 28px 20px 55px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        .left{
+          display: flex;
+          flex-direction: row;
+          max-width: 45%;
+          width: 100%;
+          .number{
+            font-size: 21px;
+            color: #4c504e;
+          }
+          .desc{
+            padding: 0 0 0 55px;
+            font-size: 18px;
+            color: #4c504e;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+          }
+        }
+        .right{
+          display: flex;
+          flex-direction: row;
+          img{
+            cursor: pointer;
+          }
+          .visualizer{
+            margin: 8px 32px 0 18px;
+          }
+          button{
+            width: 160px;
+            font-size: 18px;
+            color: #ffffff;
+            background-color: #2e4a57;
+          }
+        }
+      }
+    }
+  }
+}

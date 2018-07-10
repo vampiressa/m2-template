@@ -1,10 +1,17 @@
 import {NgModule} from '@angular/core';
+import {AccordionModule, CollapseModule} from 'ngx-bootstrap';
 
 @NgModule({
   declarations: [],
-  imports: [],
+  imports: [
+    AccordionModule.forRoot(),
+    CollapseModule.forRoot()
+  ],
   providers: [],
-  exports: []
+  exports: [
+    AccordionModule,
+    CollapseModule
+  ]
 })
 
 export class LibsSharedModule {

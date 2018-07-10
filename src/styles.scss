@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import "./assets/fonts/play/stylesheet.css";
+@import '../node_modules/bootstrap/scss/bootstrap';
 
 *{
   font-family: Play, 'Play', 'sans-serif';
@@ -33,8 +34,9 @@ ul, li{
 }
 
 a, a:hover{
-  text-decoration: none;
+  text-decoration: underline !important;
   //color: #252728;
+  cursor: pointer;
 }
 
 h1, h2, h3, h4, h5, h6, p, span, li{
