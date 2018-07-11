@@ -1,0 +1,26 @@
+<svg id="discard_button" data-name="discard button" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50">
+  <metadata><?xpacket begin="﻿" id="W5M0MpCehiHzreSzNTczkc9d"?>
+    <x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.6-c142 79.160924, 2017/07/13-01:06:39        ">
+      <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+        <rdf:Description rdf:about=""/>
+      </rdf:RDF>
+    </x:xmpmeta>
+
+
+    <?xpacket end="w"?>
+  </metadata>
+  <defs>
+    <style>
+      .cls-1 {
+      fill: #95989c;
+      }
+
+      .cls-2 {
+      fill: #fff;
+      fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <rect id="button" class="cls-1" width="50" height="50"/>
+  <path id="icon" class="cls-2" d="M1133.48,258.9l-5.72,5.723-3.43-3.421,5.73-5.724L1124,249.42l3.42-3.422,6.06,6.063,5.76-5.758,3.42,3.421-5.76,5.759,6.1,6.1L1139.58,265Z" transform="translate(-1108 -230)"/>
+</svg>

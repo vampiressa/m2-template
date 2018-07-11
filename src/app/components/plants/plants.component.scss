@@ -33,13 +33,6 @@ section{
         }
       }
       .right{
-        span{
-          margin-right: 31px;
-          color: #c3996b;
-          font-size: 24px;
-          vertical-align: middle;
-          line-height: 11px;
-        }
         img{
           cursor: pointer;
         }
@@ -58,9 +51,9 @@ section{
         display: flex;
         flex-direction: row;
         align-items: center;
-        justify-content: space-between;
         padding: 10px 30px;
         .calendar{
+          margin-right: 40px;
           img{
             margin-right: 30px;
           }
@@ -73,7 +66,6 @@ section{
           }
         }
         .checkbox{
-          margin: 0 0 0 40px;
           input[type=checkbox]{
             vertical-align: middle;
             height: 25px;
@@ -94,29 +86,48 @@ section{
             font-size: 21px;
             color: #2e4a57;
           }
-          &.custom{
-            margin: 0 0 0 63px;
-            img{
-              cursor: pointer;
-            }
-          }
         }
       }
       .tr{
         height: 72px;
-        padding: 0 47px 0 31px;
+        padding: 0 28px 0 55px;
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
-        p{
-          color: #4c504e;
-          font-size: 18px;
-          max-width: calc(100% / 3 - 100px);
+        .left{
+          display: flex;
+          flex-direction: row;
+          max-width: 45%;
           width: 100%;
-          overflow: hidden;
-          text-overflow: ellipsis;
-          white-space: nowrap;
+          .number{
+            font-size: 21px;
+            color: #4c504e;
+          }
+          .desc{
+            padding: 0 0 0 55px;
+            font-size: 18px;
+            color: #4c504e;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+          }
+        }
+        .right{
+          display: flex;
+          flex-direction: row;
+          button{
+            width: 160px;
+            font-size: 18px;
+            color: #ffffff;
+            background-color: #2e4a57;
+            &:first-child{
+              border: 1px solid #2e4a57;
+              background-color: transparent;
+              color: #2e4a57;
+              margin-right: 30px;
+            }
+          }
         }
       }
     }

@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
 import {UIRouter} from '@uirouter/angular';
+import {ApiService} from '@core/services/api.service';
 
 @Injectable()
 export class OauthService {
@@ -10,7 +11,7 @@ export class OauthService {
   // private _regex = window.location.href.match(PatternsConstant.token);
   // private _urlToken = this._regex ? this._regex[1] : null;
 
-  constructor(public router: UIRouter) {
+  constructor(public router: UIRouter, public apiService: ApiService) {
 
   }
 
@@ -30,6 +31,10 @@ export class OauthService {
     // 	this.router.stateService.go('404');
     // }
 
+  }
+
+  public login(body, params) {
+    return this.apiService.post('/api/Account/Login', body, params).subscribe(res => res);
   }
 
 }

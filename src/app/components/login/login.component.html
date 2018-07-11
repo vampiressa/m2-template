@@ -9,19 +9,19 @@
       <p class="login">LOGIN</p>
       <form>
         <div class="field">
-          <label for="login"></label>
-          <input type="text" id="login">
+          <label for="email"></label>
+          <input type="text" id="email" [(ngModel)]="data.Email" name="email">
         </div>
         <div class="field">
-          <label for="pass"></label>
-          <input type="password" id="pass">
+          <label for="password"></label>
+          <input type="password" id="password" [(ngModel)]="data.Password" name="password">
           <p class="activeBorder"></p>
         </div>
         <div class="actions">
           <div class="checkbox">
             <input type="checkbox" class="pointer"><span>show password</span>
           </div>
-          <button type="submit"><img src="../../../assets/img/key.png" alt="">LOGIN</button>
+          <button type="submit" (click)="login()"><img src="../../../assets/img/key.png" alt="">LOGIN</button>
         </div>
       </form>
     </div>
