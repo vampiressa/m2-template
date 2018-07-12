@@ -1,16 +1,18 @@
 import {NgModule} from '@angular/core';
-import {AccordionModule, CollapseModule} from 'ngx-bootstrap';
+import {AccordionModule, BsDropdownModule, CollapseModule} from 'ngx-bootstrap';
 
 @NgModule({
   declarations: [],
   imports: [
     AccordionModule.forRoot(),
-    CollapseModule.forRoot()
+    CollapseModule.forRoot(),
+    BsDropdownModule.forRoot()
   ],
   providers: [],
   exports: [
     AccordionModule,
-    CollapseModule
+    CollapseModule,
+    BsDropdownModule
   ]
 })
 

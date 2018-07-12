@@ -31,17 +31,22 @@ section{
           vertical-align: middle;
           margin: 0 0 0 42px;
           line-height: 11px;
+          cursor: pointer;
         }
       }
       .searchMenu{
+        display: none;
         max-width: 300px;
         width: 100%;
         max-height: 245px;
         background-color: #eaedee;
-        position: absolute;
-        top: 95px;
-        left: 185px;
         padding: 0 0 20px 0;
+        &.show{
+          display: block;
+          position: absolute;
+          top: 95px !important;
+          left: 185px !important;
+        }
         &:before{
           width: 0;
           height: 0;

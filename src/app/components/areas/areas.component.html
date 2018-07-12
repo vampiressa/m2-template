@@ -5,13 +5,13 @@
         <a>alerts > </a><a>...</a>
       </div>
       <ui-view>
-        <div class="alerts">
+        <div class="alerts" dropdown>
           <div class="left">
             <img src="../../../assets/img/areasicon.png">
-            <span>SELECT PLANT FOR VIEW AREAS</span>
+            <span dropdownToggle>SELECT PLANT FOR VIEW AREAS</span>
           </div>
-          <div class="searchMenu">
-            <div class="search">
+          <div class="searchMenu" *dropdownMenu>
+            <div class="search" onclick="event.stopImmediatePropagation()">
               <input type="text" placeholder="search">
               <img src="../../../assets/img/Searchbutton.svg" alt="" class="searchButton">
             </div>
