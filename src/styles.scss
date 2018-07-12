@@ -92,6 +92,10 @@ input[type=text]:focus, input[type=password]:focus, textarea:focus{
   box-shadow: inset 0px -2px 0px 0px rgba(74, 183, 144, 1);
 }
 
+input.error, input.ng-invalid{
+  box-shadow: inset 0px -2px 0px 0px rgb(219, 35, 18) !important;
+}
+
 .bold{
   font-weight: 700;
 }
