@@ -9,7 +9,9 @@ import {OauthService} from '@core/services/oauth.service';
 })
 export class LoginComponent implements OnInit {
 
-  public data = {} as LoginInterface;
+  public data = {
+    grant_type: 'password'
+  } as LoginInterface;
 
   constructor(protected authService: OauthService) {
   }
@@ -18,7 +20,7 @@ export class LoginComponent implements OnInit {
   }
 
   public login() {
-    this.authService.login(this.data, null);
+    this.authService.login(null, this.data);
   }
 
 }

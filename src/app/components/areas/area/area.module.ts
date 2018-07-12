@@ -1,14 +1,13 @@
 import {NgModule} from '@angular/core';
 import {AngularSharedModule} from '@core/shared/angular.shared.module';
 import {UIRouterModule} from '@uirouter/angular';
-import {PlantsComponent} from './plants.component';
-import {PlantModule} from '@components/plants/plant/plant.module';
+import {AreaComponent} from './area.component';
 
 const routes = [
   {
-    name: 'plants',
-    url: '/plants',
-    component: PlantsComponent,
+    name: 'areas.area',
+    url: '/:id/:typeOperation',
+    component: AreaComponent,
     data: {
       canActivate: {
         authGuard: true
@@ -22,13 +21,10 @@ const routes = [
     AngularSharedModule,
     UIRouterModule.forChild({
       states: routes
-    }),
-    PlantModule
+    })
   ],
-  declarations: [
-    PlantsComponent
-  ],
+  declarations: [AreaComponent],
   exports: []
 })
-export class PlantsModule {
+export class AreaModule {
 }

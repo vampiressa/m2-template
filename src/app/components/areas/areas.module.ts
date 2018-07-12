@@ -1,14 +1,15 @@
 import {NgModule} from '@angular/core';
 import {AngularSharedModule} from '@core/shared/angular.shared.module';
 import {UIRouterModule} from '@uirouter/angular';
-import {PlantsComponent} from './plants.component';
-import {PlantModule} from '@components/plants/plant/plant.module';
+import {AreasComponent} from './areas.component';
+import {AreaModule} from '@components/areas/area/area.module';
+import {PlantsAreaModule} from '@components/areas/plantsArea/plantsArea.module';
 
 const routes = [
   {
-    name: 'plants',
-    url: '/plants',
-    component: PlantsComponent,
+    name: 'areas',
+    url: '/areas',
+    component: AreasComponent,
     data: {
       canActivate: {
         authGuard: true
@@ -23,12 +24,13 @@ const routes = [
     UIRouterModule.forChild({
       states: routes
     }),
-    PlantModule
+    AreaModule,
+    PlantsAreaModule
   ],
   declarations: [
-    PlantsComponent
+    AreasComponent
   ],
   exports: []
 })
-export class PlantsModule {
+export class AreasModule {
 }

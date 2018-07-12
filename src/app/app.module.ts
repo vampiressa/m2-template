@@ -5,6 +5,7 @@ import {AppComponent} from './app.component';
 import {RouteConfig} from '@core/configs/route.config';
 import {CoreModule} from '@core/core.module';
 import {ComponentsModule} from '@components/components.module';
+import {SpinnerService} from '@core/services/spinner.service';
 
 const routes = [
   {
@@ -15,10 +16,6 @@ const routes = [
         authGuard: true
       }
     }
-    // redirectTo: 'login'
-    //   views: {
-    //       $default: {component: LoginComponent}
-    //     }
   }
 ];
 
@@ -35,7 +32,9 @@ const routes = [
       config: RouteConfig
     })
   ],
-  providers: [],
+  providers: [
+    SpinnerService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

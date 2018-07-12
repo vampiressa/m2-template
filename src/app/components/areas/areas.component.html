@@ -1,0 +1,50 @@
+<ui-view name="lineInAreas">
+  <section>
+    <div class="container">
+      <div class="pathNav">
+        <a>alerts > </a><a>...</a>
+      </div>
+      <ui-view>
+        <div class="alerts">
+          <div class="left">
+            <img src="../../../assets/img/areasicon.png">
+            <span>AREAS FROM menu</span>
+          </div>
+          <div class="right">
+            <a uiSrefActive="active" uiSref="areas.area" [uiParams]="{ id: 'area', typeOperation: 'new' }"><img src="../../../assets/img/backlogbutton.svg"></a>
+          </div>
+        </div>
+        <!--<div class="main">-->
+        <!--<div class="tr grey">-->
+        <!--<div class="left">-->
+        <!--<p class="number">1</p>-->
+        <!--<p class="desc">Here are the first few words of the description of asffffffffffffff</p>-->
+        <!--</div>-->
+        <!--<div class="right">-->
+        <!--<a uiSrefActive="active" uiSref="areas.area" [uiParams]="{ id: 1, typeOperation: 'edit' }">-->
+        <!--<button class="transparent">Edit</button>-->
+        <!--</a>-->
+        <!--<a>-->
+        <!--<button>to Areas</button>-->
+        <!--</a>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--<div class="tr white">-->
+        <!--<div class="left">-->
+        <!--<p class="number">1</p>-->
+        <!--<p class="desc">Here are the first few words of the description of asffffffffffffff</p>-->
+        <!--</div>-->
+        <!--<div class="right">-->
+        <!--<a uiSrefActive="active" uiSref="plants.plant" [uiParams]="{ id: 1, typeOperation: 'edit' }">-->
+        <!--<button class="transparent">Edit</button>-->
+        <!--</a>-->
+        <!--<a>-->
+        <!--<button>to Areas</button>-->
+        <!--</a>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--</div>-->
+      </ui-view>
+    </div>
+  </section>
+</ui-view>

@@ -1,13 +1,15 @@
 import {NgModule} from '@angular/core';
 import {AngularSharedModule} from '@core/shared/angular.shared.module';
 import {UIRouterModule} from '@uirouter/angular';
-import {AddPlantComponent} from './add-plant.component';
+import {PlantsAreaComponent} from './plantsArea.component';
 
 const routes = [
   {
-    name: 'plants.add-plant',
-    url: '/add-plant',
-    component: AddPlantComponent,
+    name: 'plants.area',
+    url: '/:id/areas',
+    views: {
+      areaInPlants: {component: PlantsAreaComponent}
+    },
     data: {
       canActivate: {
         authGuard: true
@@ -23,8 +25,10 @@ const routes = [
       states: routes
     })
   ],
-  declarations: [AddPlantComponent],
+  declarations: [
+    PlantsAreaComponent
+  ],
   exports: []
 })
-export class AddPlantModule {
+export class PlantsAreaModule {
 }

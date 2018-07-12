@@ -1,5 +1,5 @@
 export interface LoginInterface {
-  Email: string;
-  Password: string;
-  RememberMe: boolean;
+  username: string;
+  password: string;
+  grant_type: string;
 }

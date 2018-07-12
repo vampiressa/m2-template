@@ -34,7 +34,7 @@ export class OauthService {
   }
 
   public login(body, params) {
-    return this.apiService.post('/api/Account/Login', body, params).subscribe(res => res);
+    return this.apiService.login('/connect/token', body, params).subscribe(res => res);
   }
 
 }
