@@ -39,8 +39,6 @@ section.body{
       form{
         display: flex;
         flex-direction: column;
-        //justify-content: space-between;
-        //height: 198px;
         margin: 42px 0 0 0;
         .field{
           margin: 0 0 35px 0;
@@ -53,20 +51,6 @@ section.body{
             color: #221e1f;
             font-size: 24px;
           }
-          p.activeBorder{
-            border: 2px solid #4ab790;
-            width: 421px;
-            position: relative;
-            bottom: 5px;
-            margin: 0 0 0 1px;
-          }
-        }
-        input.field:after{
-          content: "";
-          display: inline-block;
-          width: 25px;
-          height: 25px;
-          background: url("../../../assets/img/activefieldindicator.svg");
         }
         .actions{
           display: flex;
