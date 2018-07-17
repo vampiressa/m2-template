@@ -5,6 +5,7 @@ import {AlertsModule} from '@components/alerts/alerts.module';
 import {BacklogModule} from '@components/backlog/backlog.module';
 import {PlantsModule} from '@components/plants/plants.module';
 import {AreasModule} from '@components/areas/areas.module';
+import {LinesModule} from '@components/lines/lines.module';
 
 @NgModule({
   declarations: [],
@@ -14,7 +15,8 @@ import {AreasModule} from '@components/areas/areas.module';
     AlertsModule,
     BacklogModule,
     PlantsModule,
-    AreasModule
+    AreasModule,
+    LinesModule
   ],
   providers: [],
   exports: [

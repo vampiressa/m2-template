@@ -1,4 +1,4 @@
-<ui-view name="areaInPlants">
+<ui-view name="lineInAreas">
   <section>
     <div class="container">
       <div class="pathNav">
@@ -7,11 +7,11 @@
       <ui-view>
         <div class="alerts">
           <div class="left">
-            <img src="../../../assets/img/plantsIcon.svg">
-            <span>PRODUCTION PLANTS</span>
+            <img src="../../../../assets/img/linesicon.svg">
+            <span>PRODUCTION LINES <span class="plantName">FOR AREA 2 - AREA DESCRIPTION</span></span>
           </div>
           <div class="right">
-            <a uiSrefActive="active" uiSref="plants.plant" [uiParams]="{ id: 'plant', typeOperation: 'new' }"><img src="../../../assets/img/backlogbutton.svg"></a>
+            <a uiSrefActive="active" uiSref="lines.line" [uiParams]="{ id: 'area', typeOperation: 'new' }"><img src="../../../assets/img/backlogbutton.svg"></a>
           </div>
         </div>
         <div class="main">
@@ -21,11 +21,11 @@
               <p class="desc">Here are the first few words of the description of asffffffffffffff</p>
             </div>
             <div class="right">
-              <a uiSrefActive="active" uiSref="plants.plant" [uiParams]="{ id: 1, typeOperation: 'edit' }">
+              <a uiSrefActive="active" uiSref="lines.line" [uiParams]="{ id: 1, typeOperation: 'edit' }">
                 <button class="transparent">Edit</button>
               </a>
-              <a uiSrefActive="active" uiSref="plants.area" [uiParams]="{ id: 1, typeOperation: 'area' }">
-                <button>to Areas</button>
+              <a>
+                <button>to Machines</button>
               </a>
             </div>
           </div>
@@ -35,11 +35,11 @@
               <p class="desc">Here are the first few words of the description of asffffffffffffff</p>
             </div>
             <div class="right">
-              <a uiSrefActive="active" uiSref="plants.plant" [uiParams]="{ id: 1, typeOperation: 'edit' }">
+              <a uiSrefActive="active" uiSref="lines.line" [uiParams]="{ id: 1, typeOperation: 'edit' }">
                 <button class="transparent">Edit</button>
               </a>
-              <a uiSrefActive="active" uiSref="plants.area" [uiParams]="{ id: 1, typeOperation: 'area' }">
-                <button>to Areas</button>
+              <a>
+                <button>to Machines</button>
               </a>
             </div>
           </div>
