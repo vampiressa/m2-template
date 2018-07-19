@@ -1,40 +1,68 @@
 import {Injectable} from '@angular/core';
-import {UIRouter} from '@uirouter/angular';
 import {ApiService} from '@core/services/api.service';
+import {HttpBackend, HttpClient, HttpHeaders} from '@angular/common/http';
+import {environment} from '../../../environments/environment';
+import {UIRouter, UrlService} from '@uirouter/angular';
 
 @Injectable()
 export class OauthService {
 
+  private authData: any = JSON.parse(localStorage.getItem('authData'));
 
-  public user = true;
+  public user: object;
 
-  // private _regex = window.location.href.match(PatternsConstant.token);
-  // private _urlToken = this._regex ? this._regex[1] : null;
-
-  constructor(public router: UIRouter, public apiService: ApiService) {
-
+  constructor(private handler: HttpBackend, private apiService: ApiService, private http: HttpClient, private router: UIRouter, private urlService: UrlService) {
+    this.http = new HttpClient(handler);
   }
 
   public init() {
-
-    // local dev
-
-    // localStorage.setItem('token', 'Gh6WR6TNSHTLq7HJcW9h4Ut27sPLH9tz');
-
-    // prod bitrix
-
-    // if (this._urlToken) {
-    // 	localStorage.setItem('token', this._urlToken);
-    // 	//get user info
-    // }
-    // else {
-    // 	this.router.stateService.go('404');
-    // }
-
+    if (this.authData) {
+      return this.getUserData(false);
+    }
+    else {
+      this.activateUrlRouter();
+    }
   }
 
-  public login(body) {
-    return this.apiService.login('/connect/token', body).subscribe(res => res);
+  public login(body: object) {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/x-www-form-urlencoded'
+    });
+    return this.http
+      .post(environment.api + '/connect/token', this.encodeObjectToParams(body), {headers: headers})
+      .pipe();
+  }
+
+  public setTokenAndSetUserData(res: object, redirect: boolean) {
+    localStorage.setItem('authData', JSON.stringify(res));
+    this.getUserData(redirect);
+  }
+
+  private getUserData(redirect: boolean) {
+    return this.apiService.get('/Account/GetUserData', null)
+      .subscribe((res) => {
+        this.user = res;
+        this.activateUrlRouter();
+        if (redirect) {
+          return this.router.stateService.go('alerts');
+        }
+      });
+  }
+
+  public logOut() {
+    localStorage.removeItem('authData');
+    this.user = {};
+  }
+
+  public activateUrlRouter() {
+    this.urlService.listen();
+    this.urlService.sync();
+  }
+
+  public encodeObjectToParams(obj: any): string {
+    return Object.keys(obj)
+      .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(obj[key]))
+      .join('&');
   }
 
 }

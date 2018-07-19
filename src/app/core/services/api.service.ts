@@ -1,82 +1,38 @@
 import {Injectable} from '@angular/core';
-import {HttpClient, HttpEvent, HttpHandler, HttpHeaders, HttpInterceptor, HttpParams, HttpRequest} from '@angular/common/http';
+import {HttpClient, HttpParams} from '@angular/common/http';
 import {environment} from '../../../environments/environment';
 import {UIRouter} from '@uirouter/angular';
-import {Observable, throwError} from 'rxjs';
-import {catchError} from 'rxjs/operators';
 
 @Injectable()
-export class ApiService implements HttpInterceptor {
+export class ApiService {
 
   constructor(protected http: HttpClient, protected router: UIRouter) {
 
   }
 
-  intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-
-    const headers = new HttpHeaders({
-      'Authorization': 'token 123',
-      'Content-Type': 'application/json'
-    });
-
-    return next.handle(req.clone({headers: headers}));
-  }
-
-  public login(link: string, body: object) {
-    const headers = new HttpHeaders({
-      'Content-Type': 'application/x-www-form-urlencoded'
-    });
-    return this.http
-      .post(environment.api + link, this.encodeObjectToParams(body), {headers: headers})
-      .pipe(
-        catchError(this.handleError)
-      );
-  }
-
   public get(link: string, params: HttpParams) {
     return this.http
-      .get(environment.api + link, {params: params})
-      .pipe(
-        catchError(this.handleError)
-      );
+      .get(environment.api + '/api' + link, {params: params})
+      .pipe();
   }
 
   public post(link: string, body: object, params: HttpParams) {
     return this.http
-      .post(environment.api + link, body, {params: params})
-      .pipe(
-        catchError(this.handleError)
-      );
+      .post(environment.api + '/api' + link, body, {params: params})
+      .pipe();
   }
 
 
   public put(link: string, body: object, params: HttpParams) {
     return this.http
-      .put(environment.api + link, body, {params: params})
-      .pipe(
-        catchError(this.handleError)
-      );
+      .put(environment.api + '/api' + link, body, {params: params})
+      .pipe();
   }
 
   public delete(link: string) {
     return this.http
-      .delete(environment.api + link)
-      .pipe(
-        catchError(this.handleError)
-      );
-  }
-
-  public handleError(error: Response | any) {
-    if (error.status === 403) {
-      return this.router.stateService.go('404');
-    }
-    return throwError(error);
-  }
-
-  public encodeObjectToParams(obj: any): string {
-    return Object.keys(obj)
-      .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(obj[key]))
-      .join('&');
+      .delete(environment.api + '/api' + link)
+      .pipe();
   }
 
 }

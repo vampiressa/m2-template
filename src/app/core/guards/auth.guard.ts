@@ -1,4 +1,5 @@
 import {TransitionService} from '@uirouter/core';
+import {OauthService} from '@core/services/oauth.service';
 
 export default function requiresAuthHook(transitionService: TransitionService) {
 
@@ -9,10 +10,10 @@ export default function requiresAuthHook(transitionService: TransitionService) {
   };
 
   const redirectToLogin = (transition) => {
-    // const authService: AuthService = transition.injector().get(AuthService);
+    const authService: OauthService = transition.injector().get(OauthService);
     const $state = transition.router.stateService;
-    if (true) {
-      // return $state.target('login', undefined);
+    if (!authService.user) {
+      return $state.target('login', undefined);
     }
   };
 
