@@ -52,6 +52,7 @@ export class OauthService {
   public logOut() {
     localStorage.removeItem('authData');
     this.user = {};
+    return this.router.stateService.go('login');
   }
 
   public activateUrlRouter() {
