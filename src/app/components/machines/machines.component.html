@@ -1,0 +1,34 @@
+<ui-view name="partInMachines">
+  <section>
+    <div class="container">
+      <div class="pathNav">
+        <a>alerts > </a><a>...</a>
+      </div>
+      <ui-view>
+        <div class="alerts" dropdown>
+          <div class="left">
+            <img src="../../../assets/img/machinesicon.png">
+            <span dropdownToggle>SELECT LINE FOR VIEW MACHINES</span>
+          </div>
+          <div class="searchMenu" *dropdownMenu>
+            <div class="search" onclick="event.stopImmediatePropagation()">
+              <input type="text" placeholder="search">
+              <img src="../../../assets/img/Searchbutton.svg" alt="" class="searchButton">
+            </div>
+            <div class="content">
+              <p>Area A description</p>
+              <p>Area A description</p>
+              <p>Area A description</p>
+              <p>Area A description</p>
+              <p>Area A description</p>
+              <p>Area A description</p>
+              <p>Area A description</p>
+              <p>Area A description</p>
+              <p>Area A description</p>
+            </div>
+          </div>
+        </div>
+      </ui-view>
+    </div>
+  </section>
+</ui-view>

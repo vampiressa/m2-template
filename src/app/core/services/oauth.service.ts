@@ -33,8 +33,8 @@ export class OauthService {
 
   }
 
-  public login(body, params) {
-    return this.apiService.login('/connect/token', body, params).subscribe(res => res);
+  public login(body) {
+    return this.apiService.login('/connect/token', body).subscribe(res => res);
   }
 
 }

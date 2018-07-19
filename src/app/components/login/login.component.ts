@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
   }
 
   public login() {
-    this.authService.login(null, this.data);
+    this.authService.login(this.data);
   }
 
 }

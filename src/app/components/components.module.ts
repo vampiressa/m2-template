@@ -6,6 +6,8 @@ import {BacklogModule} from '@components/backlog/backlog.module';
 import {PlantsModule} from '@components/plants/plants.module';
 import {AreasModule} from '@components/areas/areas.module';
 import {LinesModule} from '@components/lines/lines.module';
+import {MachinesModule} from '@components/machines/machines.module';
+import {PartsModule} from '@components/parts/parts.module';
 
 @NgModule({
   declarations: [],
@@ -16,7 +18,9 @@ import {LinesModule} from '@components/lines/lines.module';
     BacklogModule,
     PlantsModule,
     AreasModule,
-    LinesModule
+    LinesModule,
+    MachinesModule,
+    PartsModule
   ],
   providers: [],
   exports: [

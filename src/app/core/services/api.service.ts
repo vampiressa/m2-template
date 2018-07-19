@@ -9,12 +9,6 @@ import {catchError} from 'rxjs/operators';
 export class ApiService implements HttpInterceptor {
 
   constructor(protected http: HttpClient, protected router: UIRouter) {
-//     let Params = new HttpParams();
-//
-// // Begin assigning parameters
-//     Params = Params.append('firstParameter', firstVal);
-//     Params = Params.append('secondParameter', secondVal);
-
 
   }
 
@@ -26,16 +20,14 @@ export class ApiService implements HttpInterceptor {
     });
 
     return next.handle(req.clone({headers: headers}));
-
   }
 
-
-  public login(link: string, body: object, params: HttpParams) {
+  public login(link: string, body: object) {
     const headers = new HttpHeaders({
       'Content-Type': 'application/x-www-form-urlencoded'
     });
     return this.http
-      .post(environment.api + link, body, {params: params, headers: headers})
+      .post(environment.api + link, this.encodeObjectToParams(body), {headers: headers})
       .pipe(
         catchError(this.handleError)
       );
@@ -79,6 +71,12 @@ export class ApiService implements HttpInterceptor {
       return this.router.stateService.go('404');
     }
     return throwError(error);
+  }
+
+  public encodeObjectToParams(obj: any): string {
+    return Object.keys(obj)
+      .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(obj[key]))
+      .join('&');
   }
 
 }
