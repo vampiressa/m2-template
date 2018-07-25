@@ -1,0 +1,28 @@
+<svg id="move_to_trash" data-name="move to trash" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50">
+  <metadata><?xpacket begin="﻿" id="W5M0MpCehiHzreSzNTczkc9d"?>
+    <x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.6-c142 79.160924, 2017/07/13-01:06:39        ">
+      <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+        <rdf:Description rdf:about=""/>
+      </rdf:RDF>
+    </x:xmpmeta>
+
+
+    <?xpacket end="w"?>
+  </metadata>
+  <defs>
+    <style>
+      .cls-1 {
+      fill: #95989c;
+      }
+
+      .cls-2 {
+      fill: #fff;
+      fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <rect id="button" class="cls-1" width="50" height="50"/>
+  <path id="icon" class="cls-2"
+        d="M1143.98,245.8v4.393h-21.99V245.8h6.81V243h8.29v2.8h6.89Zm-19.88,6.266h17.77v2.868c0,3.623-.01,7.245,0,10.868,0,1.895-2.08,2.19-2.36,2.188-4.35-.031-8.7.007-13.04,0a2.831,2.831,0,0,1-2.37-2.717C1124.13,260.918,1124.1,256.571,1124.1,252.062Zm13.08,12.48h1.75v-9.274h-1.75v9.274Zm-5.07.04h1.76v-9.273h-1.76v9.273Zm-5.11-.04h1.76v-9.274H1127v9.274Z"
+        transform="translate(-1108 -230)"/>
+</svg>

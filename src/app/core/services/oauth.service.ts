@@ -3,13 +3,14 @@ import {ApiService} from '@core/services/api.service';
 import {HttpBackend, HttpClient, HttpHeaders} from '@angular/common/http';
 import {environment} from '../../../environments/environment';
 import {UIRouter, UrlService} from '@uirouter/angular';
+import {UserInterface} from '@core/interfaces/user';
 
 @Injectable()
 export class OauthService {
 
   private authData: any = JSON.parse(localStorage.getItem('authData'));
 
-  public user: object;
+  public user = {} as UserInterface;
 
   constructor(private handler: HttpBackend, private apiService: ApiService, private http: HttpClient, private router: UIRouter, private urlService: UrlService) {
     this.http = new HttpClient(handler);
@@ -40,7 +41,7 @@ export class OauthService {
 
   private getUserData(redirect: boolean) {
     return this.apiService.get('/Account/GetUserData', null)
-      .subscribe((res) => {
+      .subscribe((res: UserInterface) => {
         this.user = res;
         this.activateUrlRouter();
         if (redirect) {
@@ -51,7 +52,7 @@ export class OauthService {
 
   public logOut() {
     localStorage.removeItem('authData');
-    this.user = {};
+    this.user = {} as UserInterface;
     return this.router.stateService.go('login');
   }
 

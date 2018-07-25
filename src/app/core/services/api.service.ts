@@ -12,27 +12,23 @@ export class ApiService {
 
   public get(link: string, params: HttpParams) {
     return this.http
-      .get(environment.api + '/api' + link, {params: params})
-      .pipe();
+      .get(environment.api + '/api' + link, {params: params});
   }
 
   public post(link: string, body: object, params: HttpParams) {
     return this.http
-      .post(environment.api + '/api' + link, body, {params: params})
-      .pipe();
+      .post(environment.api + '/api' + link, body, {params: params});
   }
 
 
   public put(link: string, body: object, params: HttpParams) {
     return this.http
-      .put(environment.api + '/api' + link, body, {params: params})
-      .pipe();
+      .put(environment.api + '/api' + link, body, {params: params});
   }
 
   public delete(link: string) {
     return this.http
-      .delete(environment.api + '/api' + link)
-      .pipe();
+      .delete(environment.api + '/api' + link);
   }
 
 }

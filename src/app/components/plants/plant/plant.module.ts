@@ -2,12 +2,12 @@ import {NgModule} from '@angular/core';
 import {AngularSharedModule} from '@core/shared/angular.shared.module';
 import {Transition, UIRouterModule} from '@uirouter/angular';
 import {PlantComponent} from './plant.component';
-import {SpinnerService} from '@core/services/spinner.service';
+import {PlantsService} from '@core/services/plants.service';
 
 const routes = [
   {
-    name: 'plants.plant',
-    url: '/:id/:typeOperation',
+    name: 'plants.new-plant',
+    url: '/new-plant',
     component: PlantComponent,
     data: {
       canActivate: {
@@ -16,16 +16,26 @@ const routes = [
     },
     resolve: [
       {
-        token: 'data',
-        deps: [Transition, SpinnerService],
-        resolveFn: function (trans, spinnerService) {
-          // peopleSvc.getPerson(trans.params().personId);
-          // spinnerService.display(true);
-          return {
-            id: 1,
-            name: 'test'
-          };
-        }
+        token: 'null',
+        deps: [Transition, PlantsService],
+        resolveFn: (trans, plantsService) => plantsService.plant = {}
+      }
+    ]
+  },
+  {
+    name: 'plants.plant',
+    url: '/:id/edit-plant',
+    component: PlantComponent,
+    data: {
+      canActivate: {
+        authGuard: true
+      }
+    },
+    resolve: [
+      {
+        token: 'null',
+        deps: [Transition, PlantsService],
+        resolveFn: (trans, plantsService) => plantsService.getPlant(trans.params().id)
       }
     ]
   }
@@ -39,7 +49,8 @@ const routes = [
     })
   ],
   declarations: [PlantComponent],
-  exports: []
+  exports: [],
+  providers: [PlantsService]
 })
 export class PlantModule {
 }

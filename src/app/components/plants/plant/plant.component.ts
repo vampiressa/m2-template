@@ -1,4 +1,6 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
+import {PlantsService} from '@core/services/plants.service';
+import {UIRouter} from '@uirouter/angular';
 
 @Component({
   selector: 'app-plant',
@@ -7,19 +9,63 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class PlantComponent implements OnInit {
 
-  @Input() public data: object;
+  @ViewChild('form') private form;
 
-  public alertName = 'NEW PLANT';
-
-
-  constructor() {
+  constructor(public plantsService: PlantsService, private router: UIRouter) {
 
   }
 
   ngOnInit() {
-    // if (this.data.id) {
-    //   this.alertName = 'EDIT PLANT';
-    // }
+
+  }
+
+// GLOBAL
+
+  public defineName() {
+    if (this.plantsService.plant.id) {
+      return 'EDIT PLANT';
+    }
+    else {
+      return 'NEW PLANT';
+    }
+  }
+
+// ACTIONS
+
+  public submitButton() {
+    if (this.form.valid) {
+      if (this.plantsService.plant.id) {
+        this.changeButton();
+      }
+      else {
+        this.applyButton();
+      }
+    }
+  }
+
+  public applyButton() {
+    this.plantsService.createPlant().subscribe(null, null, () => {
+        this.moveBackButton();
+      }
+    );
+  }
+
+  public changeButton() {
+    this.plantsService.changePlant().subscribe(null, null, () => {
+        this.moveBackButton();
+      }
+    );
+  }
+
+  public deleteButton() {
+    this.plantsService.deletePlant().subscribe(null, null, () => {
+        this.moveBackButton();
+      }
+    );
+  }
+
+  public moveBackButton() {
+    this.router.stateService.go('plants', {}, {reload: true});
   }
 
 }

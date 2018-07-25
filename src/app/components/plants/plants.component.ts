@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {PlantsService} from '@core/services/plants.service';
 
 @Component({
   selector: 'app-plants',
@@ -7,7 +8,8 @@ import {Component, OnInit} from '@angular/core';
 })
 export class PlantsComponent implements OnInit {
 
-  constructor() {
+  constructor(public plantsService: PlantsService) {
+    this.plantsService.getAllPlants();
   }
 
   ngOnInit() {

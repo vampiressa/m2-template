@@ -1,10 +1,10 @@
-<section class="header" [ngStyle]="{'justify-content': authService.user ? '' : 'center'}">
-  <div class="menuButton" *ngIf="authService.user">
+<section class="header" [ngStyle]="{'justify-content': authService.user.id ? '' : 'center'}">
+  <div class="menuButton" *ngIf="authService.user.id">
     <img src="../../../../assets/img/buttonmenu.svg" alt="" class="menu" (click)="isCollapsed = !isCollapsed">
     <span>menu</span>
   </div>
-  <img src="../../../../assets/img/Logo.svg" alt="" class="logo" [ngStyle]="{'margin': authService.user ? '0 0 0 138px' : ''}">
-  <div class="search" *ngIf="authService.user">
+  <img src="../../../../assets/img/Logo.svg" alt="" class="logo" [ngStyle]="{'margin': authService.user.id ? '0 0 0 138px' : ''}">
+  <div class="search" *ngIf="authService.user.id">
     <input type="text" placeholder="search">
     <img src="../../../../assets/img/Searchbutton.svg" alt="" class="searchButton">
   </div>
@@ -35,11 +35,11 @@
   </div>
   <div class="logOut">
     <div class="left">
-      <p class="userName">Vincent Willem van Gogh</p>
-      <p class="last">Last sign in:<span class="date">02.09.1519</span><span class="time">15:40</span></p>
+      <p class="userName">{{authService.user.name}}</p>
+      <p class="last">Last sign in:<span class="date">{{authService.user.lastSignIn | date: 'dd.MM.yyyy'}}</span><span class="time">{{authService.user.lastSignIn | date: 'hh:mm'}}</span></p>
     </div>
     <div class="right">
-      <img src="../../../../assets/img/logout.svg">
+      <img src="../../../../assets/img/logout.svg" (click)="authService.logOut(); isCollapsed = true">
     </div>
   </div>
 </section>

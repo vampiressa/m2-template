@@ -4,8 +4,8 @@
   "scripts": {
     "ng": "ng",
     "serve": "ng serve --configuration hmr",
-    "serve prod": "ng serve -prod -base-href /",
-    "build": "ng build -prod -base-href /",
+    "serve prod": "ng serve --configuration production",
+    "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"

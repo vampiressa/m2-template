@@ -3,6 +3,7 @@ import {AngularSharedModule} from '@core/shared/angular.shared.module';
 import {UIRouterModule} from '@uirouter/angular';
 import {PlantsComponent} from './plants.component';
 import {PlantModule} from '@components/plants/plant/plant.module';
+import {PlantsService} from '@core/services/plants.service';
 
 const routes = [
   {
@@ -28,7 +29,8 @@ const routes = [
   declarations: [
     PlantsComponent
   ],
-  exports: []
+  exports: [],
+  providers: [PlantsService]
 })
 export class PlantsModule {
 }

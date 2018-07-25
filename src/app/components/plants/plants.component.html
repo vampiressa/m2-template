@@ -11,31 +11,17 @@
             <span>PRODUCTION PLANTS</span>
           </div>
           <div class="right">
-            <a uiSrefActive="active" uiSref="plants.plant" [uiParams]="{ id: 'plant', typeOperation: 'new' }"><img src="../../../assets/img/backlogbutton.svg"></a>
+            <a uiSrefActive="active" uiSref="plants.new-plant"><img src="../../../assets/img/backlogbutton.svg"></a>
           </div>
         </div>
         <div class="main">
-          <div class="tr grey">
+          <div class="tr grey" *ngFor="let item of plantsService.plants; let i = index" [class.white]="i%2==1" [class.grey]="i%2==0">
             <div class="left">
-              <p class="number">1</p>
-              <p class="desc">Here are the first few words of the description of asffffffffffffff</p>
+              <p class="number">{{i + 1}}</p>
+              <p class="desc">{{item.description}}</p>
             </div>
             <div class="right">
-              <a uiSrefActive="active" uiSref="plants.plant" [uiParams]="{ id: 1, typeOperation: 'edit' }">
-                <button class="transparent">Edit</button>
-              </a>
-              <a uiSrefActive="active" uiSref="plants.area" [uiParams]="{ id: 1, typeOperation: 'area' }">
-                <button>to Areas</button>
-              </a>
-            </div>
-          </div>
-          <div class="tr white">
-            <div class="left">
-              <p class="number">1</p>
-              <p class="desc">Here are the first few words of the description of asffffffffffffff</p>
-            </div>
-            <div class="right">
-              <a uiSrefActive="active" uiSref="plants.plant" [uiParams]="{ id: 1, typeOperation: 'edit' }">
+              <a uiSrefActive="active" uiSref="plants.plant" [uiParams]="{ id: item.id}">
                 <button class="transparent">Edit</button>
               </a>
               <a uiSrefActive="active" uiSref="plants.area" [uiParams]="{ id: 1, typeOperation: 'area' }">

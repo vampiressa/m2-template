@@ -96,6 +96,11 @@ input.error, input.ng-invalid, select.error, select.ng-invalid{
   box-shadow: inset 0px -2px 0px 0px rgb(219, 35, 18) !important;
 }
 
+input::placeholder, select::placeholder{
+  font-size: 21px;
+  color: #bbcad2;
+}
+
 select{
   line-height: 1;
   background: url("./assets/img/Dropdown.svg") no-repeat right;
