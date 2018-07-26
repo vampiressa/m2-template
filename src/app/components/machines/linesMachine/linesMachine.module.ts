@@ -5,7 +5,7 @@ import {LinesMachineComponent} from './linesMachine.component';
 
 const routes = [
   {
-    name: 'lines.machine',
+    name: 'plants.area.lines.machines',
     url: '/:id/machines',
     views: {
       machineInLines: {component: LinesMachineComponent}

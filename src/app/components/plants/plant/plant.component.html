@@ -6,10 +6,10 @@
         <span>{{defineName()}}</span>
       </div>
       <div class="right">
-        <input type="text" placeholder="Code" id="code" [(ngModel)]="plantsService.plant.code" required name="code">
-        <input type="text" placeholder="Description" id="desc" [(ngModel)]="plantsService.plant.description" required name="desc">
-        <button type="button" (click)="deleteButton()" *ngIf="plantsService.plant.id"><img src="../../../../assets/img/movetotrash.svg"></button>
-        <button type="button" (click)="moveBackButton()" *ngIf="!plantsService.plant.id"><img src="../../../../assets/img/discardbutton.svg"></button>
+        <input type="text" placeholder="Code" id="code" [(ngModel)]="plantsService.item.code" required name="code">
+        <input type="text" placeholder="Description" id="desc" [(ngModel)]="plantsService.item.description" required name="desc">
+        <button type="button" (click)="deleteButton()" *ngIf="plantsService.item.id"><img src="../../../../assets/img/movetotrash.svg"></button>
+        <button type="button" (click)="moveBackButton()" *ngIf="!plantsService.item.id"><img src="../../../../assets/img/discardbutton.svg"></button>
         <button type="submit" (click)="submitButton()"><img src="../../../../assets/img/applybutton.svg"></button>
       </div>
     </div>

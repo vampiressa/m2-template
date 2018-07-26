@@ -1,7 +1,12 @@
 import {NgModule} from '@angular/core';
 import {AngularSharedModule} from '@core/shared/angular.shared.module';
-import {UIRouterModule} from '@uirouter/angular';
+import {Transition, UIRouterModule} from '@uirouter/angular';
 import {PlantsAreaComponent} from './plantsArea.component';
+import {AreasService} from '@core/services/areas.service';
+
+export function resolver1(trans, areasService) {
+  return areasService.getItemsByPlant(trans.params().id);
+}
 
 const routes = [
   {
@@ -14,7 +19,14 @@ const routes = [
       canActivate: {
         authGuard: true
       }
-    }
+    },
+    resolve: [
+      {
+        token: 'null',
+        deps: [Transition, AreasService],
+        resolveFn: resolver1
+      }
+    ]
   }
 ];
 
@@ -28,7 +40,8 @@ const routes = [
   declarations: [
     PlantsAreaComponent
   ],
-  exports: []
+  exports: [],
+  providers: [AreasService]
 })
 export class PlantsAreaModule {
 }

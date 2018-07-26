@@ -9,7 +9,7 @@ import {PlantsService} from '@core/services/plants.service';
 export class PlantsComponent implements OnInit {
 
   constructor(public plantsService: PlantsService) {
-    this.plantsService.getAllPlants();
+    this.plantsService.getAllItems();
   }
 
   ngOnInit() {

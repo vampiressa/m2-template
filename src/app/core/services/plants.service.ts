@@ -2,44 +2,55 @@ import {Injectable} from '@angular/core';
 import {ApiService} from '@core/services/api.service';
 import {PlantsInterface} from '@core/interfaces/plants';
 import {SpinnerService} from '@core/services/spinner.service';
+import {UIRouter} from '@uirouter/angular';
 
 @Injectable()
 export class PlantsService {
 
-  public plants: PlantsInterface[];
+  public items: PlantsInterface[];
 
-  public plant = {} as PlantsInterface;
+  public item = {} as PlantsInterface;
 
-  constructor(private apiService: ApiService, private spinnerService: SpinnerService) {
+  constructor(private apiService: ApiService, private spinnerService: SpinnerService, private router: UIRouter) {
 
   }
 
-  public getAllPlants() {
+  public getAllItems() {
     return this.apiService.get('/Plants', null).subscribe((res: PlantsInterface[]) => {
-      this.plants = res;
+      this.items = res;
     });
   }
 
-  public getPlant(id) {
+  public getItem(id) {
     this.spinnerService.display(true);
     return this.apiService.get('/Plants/' + id, null).toPromise().then((res: PlantsInterface) => {
-      this.plant = res;
+      this.item = res;
     });
   }
 
-  public createPlant() {
+  public createItem() {
     this.spinnerService.display(true);
-    return this.apiService.post('/Plants', this.plant, null);
+    return this.apiService.post('/Plants', this.item, null);
   }
 
-  public changePlant() {
+  public changeItem() {
     this.spinnerService.display(true);
-    return this.apiService.put('/Plants/' + this.plant.id, this.plant, null);
+    return this.apiService.put('/Plants/' + this.item.id, this.item, null);
   }
 
-  public deletePlant() {
+  public deleteItem() {
     this.spinnerService.display(true);
-    return this.apiService.delete('/Plants/' + this.plant.id);
+    return this.apiService.delete('/Plants/' + this.item.id);
+  }
+
+  // HELPERS
+
+  public goToTable() {
+    this.router.stateService.go('plants', {}, {reload: true});
+  }
+
+  public clearItem() {
+    this.item = {};
   }
 
 }

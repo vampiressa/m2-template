@@ -5,7 +5,7 @@ import {MachinesPartComponent} from './machinesPart.component';
 
 const routes = [
   {
-    name: 'machines.part',
+    name: 'plants.area.lines.machines.parts',
     url: '/:id/parts',
     views: {
       partInMachines: {component: MachinesPartComponent}
