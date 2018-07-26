@@ -59,7 +59,7 @@ export class AreasService {
   }
 
   public clearItem() {
-    this.item = {};
+    this.item = {} as AreasInterface;
   }
 
 }

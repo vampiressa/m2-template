@@ -50,7 +50,7 @@ export class PlantsService {
   }
 
   public clearItem() {
-    this.item = {};
+    this.item = {} as PlantsInterface;
   }
 
 }

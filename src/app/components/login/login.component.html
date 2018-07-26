@@ -1,28 +1,30 @@
 <section class="body">
-  <div class="wrapper">
-    <div class="left">
-      <p>YOUR</p>
-      <p>COMPANY</p>
-      <p>LOGO</p>
-    </div>
-    <div class="right">
-      <p class="login">LOGIN</p>
-      <form>
-        <div class="field">
-          <label for="username"></label>
-          <input type="text" id="username" [(ngModel)]="data.username" name="username">
-        </div>
-        <div class="field">
-          <label for="password"></label>
-          <input type="password" id="password" [(ngModel)]="data.password" name="password">
-        </div>
-        <div class="actions">
-          <div class="checkbox">
-            <input type="checkbox" class="pointer"><span>show password</span>
+  <form #form="ngForm" novalidate>
+    <div class="wrapper">
+      <div class="left">
+        <p>YOUR</p>
+        <p>COMPANY</p>
+        <p>LOGO</p>
+      </div>
+      <div class="right">
+        <p class="login">LOGIN</p>
+        <form>
+          <div class="field">
+            <label for="username"></label>
+            <input type="text" id="username" [(ngModel)]="data.username" name="username" required>
           </div>
-          <button type="submit" (click)="login()"><img src="../../../assets/img/key.png" alt="">LOGIN</button>
-        </div>
-      </form>
+          <div class="field">
+            <label for="password"></label>
+            <input type="password" id="password" [(ngModel)]="data.password" name="password" required>
+          </div>
+          <div class="actions">
+            <div class="checkbox">
+              <input type="checkbox" class="pointer"><span>show password</span>
+            </div>
+            <button type="submit" (click)="login()"><img src="../../../assets/img/key.png" alt="">LOGIN</button>
+          </div>
+        </form>
+      </div>
     </div>
-  </div>
+  </form>
 </section>
