@@ -5,7 +5,7 @@ import {AreasLineComponent} from './areasLine.component';
 
 const routes = [
   {
-    name: 'areas.line',
+    name: 'plants.area.lines',
     url: '/:id/lines',
     views: {
       lineInAreas: {component: AreasLineComponent}

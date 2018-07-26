@@ -1,6 +1,5 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {PlantsService} from '@core/services/plants.service';
-import {UIRouter} from '@uirouter/angular';
 
 @Component({
   selector: 'app-plant',
@@ -11,7 +10,7 @@ export class PlantComponent implements OnInit {
 
   @ViewChild('form') private form;
 
-  constructor(public plantsService: PlantsService, private router: UIRouter) {
+  constructor(public plantsService: PlantsService) {
 
   }
 
@@ -22,7 +21,7 @@ export class PlantComponent implements OnInit {
 // GLOBAL
 
   public defineName() {
-    if (this.plantsService.plant.id) {
+    if (this.plantsService.item.id) {
       return 'EDIT PLANT';
     }
     else {
@@ -34,7 +33,7 @@ export class PlantComponent implements OnInit {
 
   public submitButton() {
     if (this.form.valid) {
-      if (this.plantsService.plant.id) {
+      if (this.plantsService.item.id) {
         this.changeButton();
       }
       else {
@@ -44,28 +43,28 @@ export class PlantComponent implements OnInit {
   }
 
   public applyButton() {
-    this.plantsService.createPlant().subscribe(null, null, () => {
+    this.plantsService.createItem().subscribe(null, null, () => {
         this.moveBackButton();
       }
     );
   }
 
   public changeButton() {
-    this.plantsService.changePlant().subscribe(null, null, () => {
+    this.plantsService.changeItem().subscribe(null, null, () => {
         this.moveBackButton();
       }
     );
   }
 
   public deleteButton() {
-    this.plantsService.deletePlant().subscribe(null, null, () => {
+    this.plantsService.deleteItem().subscribe(null, null, () => {
         this.moveBackButton();
       }
     );
   }
 
   public moveBackButton() {
-    this.router.stateService.go('plants', {}, {reload: true});
+    this.plantsService.goToTable();
   }
 
 }

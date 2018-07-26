@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {LoginInterface} from '@core/interfaces/login';
 import {OauthService} from '@core/services/oauth.service';
 
@@ -8,6 +8,8 @@ import {OauthService} from '@core/services/oauth.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+
+  @ViewChild('form') private form;
 
   public data = {
     grant_type: 'password'
@@ -20,10 +22,12 @@ export class LoginComponent implements OnInit {
   }
 
   public login() {
-    this.authService.login(this.data)
-      .subscribe((res) => {
-        this.authService.setTokenAndSetUserData(res, true);
-      });
+    if (this.form.valid) {
+      this.authService.login(this.data)
+        .subscribe((res) => {
+          this.authService.setTokenAndSetUserData(res, true);
+        });
+    }
   }
 
 }

@@ -4,9 +4,17 @@ import {Transition, UIRouterModule} from '@uirouter/angular';
 import {PlantComponent} from './plant.component';
 import {PlantsService} from '@core/services/plants.service';
 
+export function resolver1(trans, plantsService) {
+  return plantsService.getItem(trans.params().id);
+}
+
+export function resolver2(trans, plantsService) {
+  return plantsService.clearItem();
+}
+
 const routes = [
   {
-    name: 'plants.new-plant',
+    name: 'plants.new',
     url: '/new-plant',
     component: PlantComponent,
     data: {
@@ -18,12 +26,12 @@ const routes = [
       {
         token: 'null',
         deps: [Transition, PlantsService],
-        resolveFn: (trans, plantsService) => plantsService.plant = {}
+        resolveFn: resolver2
       }
     ]
   },
   {
-    name: 'plants.plant',
+    name: 'plants.edit',
     url: '/:id/edit-plant',
     component: PlantComponent,
     data: {
@@ -35,7 +43,7 @@ const routes = [
       {
         token: 'null',
         deps: [Transition, PlantsService],
-        resolveFn: (trans, plantsService) => plantsService.getPlant(trans.params().id)
+        resolveFn: resolver1
       }
     ]
   }

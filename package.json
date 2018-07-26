@@ -24,6 +24,7 @@
     "@uirouter/angular": "^2.0.0",
     "bootstrap": "^4.1.1",
     "core-js": "^2.5.4",
+    "ng-inline-svg": "^8.0.1",
     "ngx-bootstrap": "^3.0.1",
     "rxjs": "^6.0.0",
     "rxjs-compat": "^6.2.1",

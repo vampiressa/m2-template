@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {AreasService} from '@core/services/areas.service';
 
 @Component({
   selector: 'app-plants-area',
@@ -7,7 +8,7 @@ import {Component, OnInit} from '@angular/core';
 })
 export class PlantsAreaComponent implements OnInit {
 
-  constructor() {
+  constructor(public areasService: AreasService) {
   }
 
   ngOnInit() {
