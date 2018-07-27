@@ -12,7 +12,7 @@ export default function requiresAuthHook(transitionService: TransitionService) {
   const redirectToLogin = (transition) => {
     const authService: OauthService = transition.injector().get(OauthService);
     const $state = transition.router.stateService;
-    if (!authService.user) {
+    if (!authService.user.id) {
       return $state.target('login', undefined);
     }
   };
