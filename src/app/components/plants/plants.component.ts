@@ -15,4 +15,9 @@ export class PlantsComponent implements OnInit {
   ngOnInit() {
   }
 
+  public onScroll() {
+    this.plantsService.currentPage++;
+    this.plantsService.getAllItems();
+  }
+
 }

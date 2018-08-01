@@ -1,5 +1,9 @@
 <ui-view name="areaInPlants">
-  <section>
+  <section
+    infiniteScroll
+    [infiniteScrollDistance]="10"
+    [infiniteScrollThrottle]="0"
+    (scrolled)="onScroll()">
     <div class="container">
       <div class="pathNav">
         <a>alerts > </a><a>...</a>

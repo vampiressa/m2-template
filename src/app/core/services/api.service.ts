@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {HttpClient, HttpParams} from '@angular/common/http';
+import {HttpClient} from '@angular/common/http';
 import {environment} from '../../../environments/environment';
 import {UIRouter} from '@uirouter/angular';
 
@@ -10,18 +10,18 @@ export class ApiService {
 
   }
 
-  public get(link: string, params: HttpParams) {
+  public get(link: string, params: any) {
     return this.http
       .get(environment.api + '/api' + link, {params: params});
   }
 
-  public post(link: string, body: object, params: HttpParams) {
+  public post(link: string, body: object, params: any) {
     return this.http
       .post(environment.api + '/api' + link, body, {params: params});
   }
 
 
-  public put(link: string, body: object, params: HttpParams) {
+  public put(link: string, body: object, params: any) {
     return this.http
       .put(environment.api + '/api' + link, body, {params: params});
   }

@@ -7,7 +7,9 @@ import {UIRouter} from '@uirouter/angular';
 @Injectable()
 export class PlantsService {
 
-  public items: PlantsInterface[];
+  public currentPage = 1;
+
+  public items = [] as PlantsInterface[];
 
   public item = {} as PlantsInterface;
 
@@ -16,8 +18,8 @@ export class PlantsService {
   }
 
   public getAllItems() {
-    return this.apiService.get('/Plants', null).subscribe((res: PlantsInterface[]) => {
-      this.items = res;
+    return this.apiService.get('/Plants', {page: this.currentPage, pageSize: 10}).subscribe((res: PlantsInterface[]) => {
+      this.items = this.items.concat(res);
     });
   }
 
@@ -46,7 +48,13 @@ export class PlantsService {
   // HELPERS
 
   public goToTable() {
+    this.clearItems();
     this.router.stateService.go('plants', {}, {reload: true});
+  }
+
+  public clearItems() {
+    this.currentPage = 1;
+    this.items = [] as PlantsInterface[];
   }
 
   public clearItem() {

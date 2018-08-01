@@ -11,11 +11,11 @@
         <form>
           <div class="field">
             <label for="username"></label>
-            <input type="text" id="username" [(ngModel)]="data.username" name="username" required>
+            <input type="text" id="username" [(ngModel)]="authService.loginData.username" name="username" required>
           </div>
           <div class="field">
             <label for="password"></label>
-            <input type="password" id="password" [(ngModel)]="data.password" name="password" required>
+            <input type="password" id="password" [(ngModel)]="authService.loginData.password" name="password" required>
           </div>
           <div class="actions">
             <div class="checkbox">

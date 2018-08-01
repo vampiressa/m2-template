@@ -4,11 +4,16 @@ import {HttpBackend, HttpClient, HttpHeaders} from '@angular/common/http';
 import {environment} from '../../../environments/environment';
 import {UIRouter, UrlService} from '@uirouter/angular';
 import {UserInterface} from '@core/interfaces/user';
+import {LoginInterface} from '@core/interfaces/login';
 
 @Injectable()
 export class OauthService {
 
   private authData: any = JSON.parse(localStorage.getItem('authData'));
+
+  public loginData = {
+    grant_type: 'password'
+  } as LoginInterface;
 
   public user = {} as UserInterface;
 
@@ -25,13 +30,16 @@ export class OauthService {
     }
   }
 
-  public login(body: object) {
+  public login() {
     const headers = new HttpHeaders({
       'Content-Type': 'application/x-www-form-urlencoded'
     });
     return this.http
-      .post(environment.api + '/connect/token', this.encodeObjectToParams(body), {headers: headers})
-      .pipe();
+      .post(environment.api + '/connect/token', this.encodeObjectToParams(this.loginData), {headers: headers})
+      .pipe()
+      .subscribe((res) => {
+        this.setTokenAndSetUserData(res, true);
+      });
   }
 
   public setTokenAndSetUserData(res: object, redirect: boolean) {
