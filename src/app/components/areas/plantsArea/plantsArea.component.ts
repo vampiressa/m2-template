@@ -9,9 +9,15 @@ import {AreasService} from '@core/services/areas.service';
 export class PlantsAreaComponent implements OnInit {
 
   constructor(public areasService: AreasService) {
+    this.areasService.getItemsByPlant();
   }
 
   ngOnInit() {
+  }
+
+  public onScroll() {
+    this.areasService.currentPage++;
+    this.areasService.getItemsByPlant();
   }
 
 }

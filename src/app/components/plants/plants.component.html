@@ -1,9 +1,5 @@
 <ui-view name="areaInPlants">
-  <section
-    infiniteScroll
-    [infiniteScrollDistance]="10"
-    [infiniteScrollThrottle]="0"
-    (scrolled)="onScroll()">
+  <section>
     <div class="container">
       <div class="pathNav">
         <a>alerts > </a><a>...</a>
@@ -18,7 +14,12 @@
             <a uiSrefActive="active" uiSref="plants.new"><img src="../../../assets/img/backlogbutton.svg"></a>
           </div>
         </div>
-        <div class="main">
+        <div class="main"
+             infiniteScroll
+             [infiniteScrollDistance]="1"
+             [infiniteScrollThrottle]="0"
+             [infiniteScrollUpDistance]="0"
+             (scrolled)="onScroll()">
           <div class="tr" *ngFor="let item of plantsService.items; let i = index" [class.white]="i%2==1" [class.grey]="i%2==0">
             <div class="left">
               <p class="number">{{i + 1}}</p>

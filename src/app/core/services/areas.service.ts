@@ -7,6 +7,8 @@ import {UIRouter} from '@uirouter/angular';
 @Injectable()
 export class AreasService {
 
+  public currentPage = 1;
+
   public items: AreasInterface[];
 
   public item = {} as AreasInterface;
@@ -30,10 +32,13 @@ export class AreasService {
     });
   }
 
-  public getItemsByPlant(id) {
+  public getItemsByPlant() {
     this.spinnerService.display(true);
-    return this.apiService.get('/Areas/GetByPlant/' + id, null).toPromise().then((res: AreasInterface) => {
-      this.item = res;
+    return this.apiService.get('/Areas/GetByPlant/' + this.router.globals.params.id, {
+      page: this.currentPage,
+      pageSize: 10
+    }).subscribe((res: AreasInterface) => {
+      this.items = this.items.concat(res);
     });
   }
 
@@ -55,7 +60,13 @@ export class AreasService {
 // HELPERS
 
   public goToTable() {
+    this.clearItems();
     this.router.stateService.go('plants.area', {}, {reload: true});
+  }
+
+  public clearItems() {
+    this.currentPage = 1;
+    this.items = [] as AreasInterface[];
   }
 
   public clearItem() {
